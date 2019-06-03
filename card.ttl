@@ -1,0 +1,35 @@
+@prefix : <#>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix pim: <http://www.w3.org/ns/pim/space#>.
+@prefix schema: <http://schema.org/>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix cert: <http://www.w3.org/ns/auth/cert#>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+
+<>
+    a foaf:PersonalProfileDocument ;
+    foaf:maker <https://localhost:8443/profile/card#me> ;
+    foaf:primaryTopic <https://localhost:8443/profile/card#me> .
+
+:me a foaf:Person ;
+    a schema:Person ;
+
+    foaf:name "Jackson" ;
+
+    solid:account </> ;  # link to the account uri
+    pim:storage </> ;    # root storage
+
+    ldp:inbox </inbox/> ;
+
+    pim:preferencesFile </settings/prefs.ttl> ;  # private settings/preferences
+    solid:publicTypeIndex </settings/publicTypeIndex.ttl> ;
+    solid:privateTypeIndex </settings/privateTypeIndex.ttl> ;
+    solid:oidcIssuer <https://localhost:8443> ;
+    cert:key
+            [
+                a cert:RSAPublicKey;
+                cert:exponent 65537;
+                cert:modulus
+                    "C0717CCFA5A3DA7A9ED9FAE7D43BFC32F91C6E47FAD70D508E2BDDB5A9DCA9F16B8FC0AD37E3726E7D461F4E6B0C794D43BDE2524A4FEE634A0779319CAE4890785D00EF1872AB4D67AF508FA4B22122AA6DD327CF3699CB117D610C51F62A6000F5AEBCB7FED1AC9A20EE5EBC090065147DF404B7D9A6E8E2DFD558BC1C769769AE76C5396AAA9C5D073F4986E7F0822C6DC6ED13BE19B2B604C7379274F36FE8C865A4567EEE0FF8762FCACDBCBC00B2E9C3E4BE015FCFE8C7BF7D1DCDD08D7236819509DD85369222AB640F36142102ACB92E5474501DE313B3883ACF450FD31155F540333A4CDA865EADCE277F94A23B3493A8A1B58778BC23F61E6D6F51"^^XML:hexBinary
+            ].
