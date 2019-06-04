@@ -25,7 +25,7 @@
     pim:preferencesFile </settings/prefs.ttl> ;  # private settings/preferences
     solid:publicTypeIndex </settings/publicTypeIndex.ttl> ;
     solid:privateTypeIndex </settings/privateTypeIndex.ttl> ;
-    solid:oidcIssuer <https://timbl.com> ;
+    solid:oidcIssuer <https://localhost:8443> ;
     cert:key
             [
                 a cert:RSAPublicKey;
